@@ -1,0 +1,3 @@
+C:\Users\Nick\source\repos\tema2PCLP2\x64\Debug\tema2PCLP2.exe
+C:\Users\Cristian\Desktop\tema2PCLP2\x64\Debug\tema2PCLP2.exe
+C:\Users\Cristian\Desktop\tema2PCLP2\tema2PCLP\x64\Debug\tema2PCLP2.exe

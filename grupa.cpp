@@ -1,5 +1,6 @@
 #include "grupa.h"
 
+
 void grupa::adaugaStudent(const student& stud)
 {
 	grupa.push_back(stud);
@@ -65,22 +66,17 @@ void grupa::afisBurseStudii() const
 
 void grupa::situatie(int nrMat) const
 {
-	auto i = grupa[nrMat - 1];
-	std::cout << "Studentul " << i.getNume() << " " << i.getPrenume() << " cu numarul matricol " << i.getNrMat() << " si media de admitere " << i.getMedAdmi();
-	if (i.verifIntegralist())
-		std::cout << " este integralist ";
-	else
-		std::cout << " nu este integralist ";
-
-	if (i.verifBursaMerit())
-	{
-		std::cout << "si are bursa de merit.";
-	}
-	else if (i.verifBursaStudii())
-	{
-		std::cout << "si are bursa de studii.";
-	}
-	else
-		std::cout << "si nu are bursa.";
-	std::cout << std::endl;
+	for (auto i = grupa.begin(); i < grupa.end(); i++)
+		if (i->getNrMat() == nrMat)
+		{
+			std::cout << "Situatia studentului este:" << std::endl;
+			std::cout << "Nume: " << i->getNume() << std::endl;
+			std::cout << "Prenume: " << i->getPrenume() << std::endl;
+			std::cout << "Numar matricol: " << i->getNrMat() << std::endl;
+			std::cout << std::fixed << std::setprecision(2);
+			std::cout << "Medie: " << i->getMedie() << std::endl;
+			if(i->verifBursaMerit()) std::cout << "Bursa de merit: DA" << std::endl;
+			else if(i->verifBursaStudii()) std::cout << "Bursa de studii: DA" << std::endl;
+			break;
+		}
 }
